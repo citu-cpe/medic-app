@@ -20,10 +20,10 @@ Download the Expo Go App:
 
 [iOS](https://itunes.apple.com/app/apple-store/id982107779)
 
-## Step 2
+### Step 2
 
 Click this link: [Expo Link](https://expo.dev/@mvprinch/med-app)
 
-## Step 3
+### Step 3
 
 Click `Open in Expo Go`
