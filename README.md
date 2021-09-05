@@ -4,8 +4,8 @@ This app is a group project for CPEPE361.
 
 ## Members
 
-Argwanon, Dianne S.
-Cañal, Princh Harold
-Dela Torre, Ma. Dina Gene S.
-Llenos, Seth Angelo L.
-Tabra, Edsel John
+1. Argwanon, Dianne S.
+2. Cañal, Princh Harold
+3. Dela Torre, Ma. Dina Gene S.
+4. Llenos, Seth Angelo L.
+5. Tabra, Edsel John
