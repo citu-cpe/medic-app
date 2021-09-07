@@ -11,6 +11,8 @@ import {
   GoogleMapsProps,
 } from './components/GoogleMaps/GoogleMaps';
 import { NativeBaseProvider } from 'native-base';
+import { Text } from 'react-native';
+import { StaggerButtons } from './components/StaggerButtons/StaggerButtons';
 
 export type RootStackParamList = {
   Home: HomeProps;
@@ -36,6 +38,7 @@ export default function App() {
           <Stack.Screen name='GoogleMaps' component={GoogleMaps} />
         </Stack.Navigator>
       </NavigationContainer>
+      <StaggerButtons />
     </NativeBaseProvider>
   );
 }
