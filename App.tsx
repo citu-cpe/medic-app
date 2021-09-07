@@ -24,7 +24,7 @@ export default function App() {
   return (
     <NativeBaseProvider>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Navigator>
           <Stack.Screen name='Home' component={HomeScreen}></Stack.Screen>
           <Stack.Screen
             name='Emergencies'

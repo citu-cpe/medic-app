@@ -18,6 +18,21 @@ export const EmergenciesList = (props: EmergenciesListProps) => {
     { title: 'Call hospital', screen: '' },
     { title: 'Call fire station', screen: '' },
     { title: 'Call police station', screen: '' },
+    { title: 'Call hospital', screen: '' },
+    { title: 'Call fire station', screen: '' },
+    { title: 'Call police station', screen: '' },
+    { title: 'Call hospital', screen: '' },
+    { title: 'Call fire station', screen: '' },
+    { title: 'Call police station', screen: '' },
+    { title: 'Call hospital', screen: '' },
+    { title: 'Call fire station', screen: '' },
+    { title: 'Call police station', screen: '' },
+    { title: 'Call hospital', screen: '' },
+    { title: 'Call fire station', screen: '' },
+    { title: 'Call police station', screen: '' },
+    { title: 'Call hospital', screen: '' },
+    { title: 'Call fire station', screen: '' },
+    { title: 'Call police station', screen: '' },
   ];
 
   const handleNavigation = (screen: any, params: any) => {
