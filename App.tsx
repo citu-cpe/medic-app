@@ -10,6 +10,7 @@ import {
   GoogleMaps,
   GoogleMapsProps,
 } from './components/GoogleMaps/GoogleMaps';
+import { NativeBaseProvider } from 'native-base';
 
 export type RootStackParamList = {
   Home: HomeProps;
@@ -21,15 +22,17 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name='Home' component={HomeScreen}></Stack.Screen>
-        <Stack.Screen
-          name='Emergencies'
-          component={EmergenciesScreen}
-        ></Stack.Screen>
-        <Stack.Screen name='GoogleMaps' component={GoogleMaps}></Stack.Screen>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <NativeBaseProvider>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name='Home' component={HomeScreen}></Stack.Screen>
+          <Stack.Screen
+            name='Emergencies'
+            component={EmergenciesScreen}
+          ></Stack.Screen>
+          <Stack.Screen name='GoogleMaps' component={GoogleMaps}></Stack.Screen>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </NativeBaseProvider>
   );
 }

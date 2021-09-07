@@ -4,7 +4,6 @@ export const styles = StyleSheet.create({
   emergenciesListItem: {
     height: 150,
     width: 150,
-    padding: 10,
     margin: 20,
     backgroundColor: 'darkred',
     borderRadius: 20,
