@@ -4,6 +4,7 @@ import { Button } from 'native-base';
 import React from 'react';
 import { View } from 'react-native';
 import { RootStackParamList } from '../../App';
+import { colors } from '../../utils/colors';
 import { styles } from './HomeScreen.styles';
 
 export interface HomeProps {}
@@ -17,7 +18,7 @@ export const HomeScreen = ({ navigation }: Props) => (
       colorScheme='red'
       h={200}
       w={200}
-      _text={{ fontSize: 50, color: 'white' }}
+      _text={{ fontSize: 50, color: colors.white }}
       onPress={() => navigation.navigate('Emergencies', {})}
     >
       HELP!
