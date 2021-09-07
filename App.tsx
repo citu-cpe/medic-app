@@ -24,13 +24,16 @@ export default function App() {
   return (
     <NativeBaseProvider>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name='Home' component={HomeScreen}></Stack.Screen>
+        <Stack.Navigator
+          initialRouteName='Home'
+          screenOptions={{ headerShown: false }}
+        >
+          <Stack.Screen name='Home' component={HomeScreen} />
           <Stack.Screen
             name='Emergencies'
             component={EmergenciesScreen}
           ></Stack.Screen>
-          <Stack.Screen name='GoogleMaps' component={GoogleMaps}></Stack.Screen>
+          <Stack.Screen name='GoogleMaps' component={GoogleMaps} />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
