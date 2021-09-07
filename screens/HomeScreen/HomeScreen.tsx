@@ -1,10 +1,8 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { StatusBar } from 'expo-status-bar';
-import { Button } from 'native-base';
+import { StatusBar, TouchableOpacity, Text } from 'react-native';
 import React from 'react';
-import { View } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { RootStackParamList } from '../../App';
-import { colors } from '../../utils/colors';
 import { styles } from './HomeScreen.styles';
 
 export interface HomeProps {}
@@ -12,17 +10,13 @@ export interface HomeProps {}
 type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 export const HomeScreen = ({ navigation }: Props) => (
-  <View style={styles.container}>
-    <Button
-      style={{ borderRadius: 100 }}
-      colorScheme='red'
-      h={200}
-      w={200}
-      _text={{ fontSize: 50, color: colors.white }}
+  <SafeAreaView style={styles.container}>
+    <StatusBar barStyle='dark-content' />
+    <TouchableOpacity
+      style={styles.button}
       onPress={() => navigation.navigate('Emergencies', {})}
     >
-      HELP!
-    </Button>
-    <StatusBar style='auto' hidden={true} />
-  </View>
+      <Text style={styles.buttonText}>HELP!</Text>
+    </TouchableOpacity>
+  </SafeAreaView>
 );
