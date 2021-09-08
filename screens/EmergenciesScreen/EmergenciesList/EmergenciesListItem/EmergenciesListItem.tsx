@@ -1,18 +1,21 @@
 import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
-import { styles } from './EmergenciesListItem.style';
+import { getStyles } from './EmergenciesListItem.style';
 
 export interface EmergencyListItem {
   title: string;
   screen: string;
 }
 
-interface EmergenciesListItemProps {
+export interface EmergenciesListItemProps {
   emergencyListItem: EmergencyListItem;
   navigate: (screen: string, params: any) => void;
+  dark?: boolean;
 }
 
 export const EmergenciesListItem = (props: EmergenciesListItemProps) => {
+  const styles = getStyles(props);
+
   return (
     <TouchableOpacity
       onPress={

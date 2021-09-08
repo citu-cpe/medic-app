@@ -11,7 +11,6 @@ import {
   GoogleMapsProps,
 } from './components/GoogleMaps/GoogleMaps';
 import { NativeBaseProvider } from 'native-base';
-import { Text } from 'react-native';
 import { StaggerButtons } from './components/StaggerButtons/StaggerButtons';
 
 export type RootStackParamList = {
@@ -22,6 +21,9 @@ export type RootStackParamList = {
 
 const Stack = createNativeStackNavigator();
 
+// TODO: add splash screen
+// TODO: add call functionality (with contacts)
+// TODO: add emergency info screen
 export default function App() {
   return (
     <NativeBaseProvider>

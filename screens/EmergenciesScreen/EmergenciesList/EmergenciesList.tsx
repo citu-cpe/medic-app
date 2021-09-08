@@ -12,12 +12,13 @@ interface EmergenciesListProps {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Emergencies'>;
 }
 
+// TODO: use section list
 export const EmergenciesList = (props: EmergenciesListProps) => {
   const emergenciesList: EmergencyListItem[] = [
-    { title: 'Get directions to nearest hospital', screen: 'GoogleMaps' },
-    { title: 'Call hospital', screen: '' },
-    { title: 'Call fire station', screen: '' },
-    { title: 'Call police station', screen: '' },
+    { title: 'Get directions to the nearest hospital', screen: 'GoogleMaps' },
+    { title: 'COVID-19', screen: '' },
+    { title: 'Open wound', screen: '' },
+    { title: 'Nauseous', screen: '' },
   ];
 
   const handleNavigation = (screen: any, params: any) => {
@@ -25,7 +26,11 @@ export const EmergenciesList = (props: EmergenciesListProps) => {
   };
 
   const renderItem = ({ item }: { item: EmergencyListItem }) => (
-    <EmergenciesListItem emergencyListItem={item} navigate={handleNavigation} />
+    <EmergenciesListItem
+      emergencyListItem={item}
+      navigate={handleNavigation}
+      dark={item.screen === 'GoogleMaps'}
+    />
   );
 
   return (
