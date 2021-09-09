@@ -24,7 +24,6 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator();
 
 // TODO: add expo fonts
-// TODO: add call functionality (with contacts)
 // TODO: add emergency info screen
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);

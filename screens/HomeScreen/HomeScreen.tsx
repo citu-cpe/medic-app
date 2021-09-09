@@ -4,18 +4,22 @@ import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { RootStackParamList } from '../../App';
 import { styles } from './HomeScreen.styles';
+import { Box } from 'native-base';
+import { CircularButton } from '../../components/CircularButton/CircularButton';
 
 export interface HomeProps {}
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 export const HomeScreen = ({ navigation }: Props) => (
-  <SafeAreaView style={styles.container}>
-    <TouchableOpacity
+  <Box style={styles.container}>
+    <CircularButton
+      size={200}
       style={styles.button}
+      dark={true}
       onPress={() => navigation.navigate('Emergencies', {})}
     >
       <Text style={styles.buttonText}>HELP!</Text>
-    </TouchableOpacity>
-  </SafeAreaView>
+    </CircularButton>
+  </Box>
 );
