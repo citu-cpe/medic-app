@@ -7,6 +7,7 @@ import call from 'react-native-phone-call';
 export const StaggerButtons = () => {
   const { isOpen, onToggle } = useDisclose();
   const buttonSize = 48;
+  const prompt = false;
 
   return (
     <Box style={styles.container}>
@@ -24,7 +25,7 @@ export const StaggerButtons = () => {
           colorScheme='red'
           variant='solid'
           mb={4}
-          onPress={() => call({ number: '166', prompt: true })}
+          onPress={() => call({ number: '166', prompt })}
         />
         <IconButton
           rounded='full'
@@ -32,7 +33,7 @@ export const StaggerButtons = () => {
           colorScheme='red'
           variant='solid'
           mb={4}
-          onPress={() => call({ number: '160', prompt: true })}
+          onPress={() => call({ number: '160', prompt })}
         />
         <IconButton
           rounded='full'
@@ -40,7 +41,7 @@ export const StaggerButtons = () => {
           colorScheme='red'
           variant='solid'
           mb={4}
-          onPress={() => call({ number: '161', prompt: true })}
+          onPress={() => call({ number: '161', prompt })}
         />
       </Stagger>
       <IconButton
