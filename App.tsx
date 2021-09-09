@@ -10,9 +10,10 @@ import {
   GoogleMaps,
   GoogleMapsProps,
 } from './components/GoogleMaps/GoogleMaps';
-import { Box, NativeBaseProvider } from 'native-base';
+import { Box, NativeBaseProvider, StatusBar } from 'native-base';
 import { StaggerButtons } from './components/StaggerButtons/StaggerButtons';
 import * as SplashScreen from 'expo-splash-screen';
+import { Platform } from 'react-native';
 
 export type RootStackParamList = {
   Home: HomeProps;
@@ -56,6 +57,9 @@ export default function App() {
   return (
     <NativeBaseProvider>
       <Box style={{ flex: 1 }} onLayout={onLayoutRootView}>
+        <StatusBar
+          barStyle={Platform.OS === 'android' ? 'default' : 'dark-content'}
+        />
         <NavigationContainer>
           <Stack.Navigator
             initialRouteName='Home'

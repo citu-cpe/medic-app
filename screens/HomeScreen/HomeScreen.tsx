@@ -1,5 +1,5 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { StatusBar, TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { RootStackParamList } from '../../App';
@@ -11,7 +11,6 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 export const HomeScreen = ({ navigation }: Props) => (
   <SafeAreaView style={styles.container}>
-    <StatusBar barStyle='dark-content' />
     <TouchableOpacity
       style={styles.button}
       onPress={() => navigation.navigate('Emergencies', {})}
