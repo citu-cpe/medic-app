@@ -17,7 +17,7 @@ export const CircularButton = ({
 
   return (
     <TouchableOpacity {...props} style={{ ...styles.button }}>
-      <Text style={styles.text}>{children}</Text>
+      {children}
     </TouchableOpacity>
   );
 };

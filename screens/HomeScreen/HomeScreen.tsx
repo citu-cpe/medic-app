@@ -1,7 +1,6 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { TouchableOpacity, Text } from 'react-native';
+import { Text } from 'react-native';
 import React from 'react';
-import { SafeAreaView } from 'react-native';
 import { RootStackParamList } from '../../App';
 import { styles } from './HomeScreen.styles';
 import { Box } from 'native-base';

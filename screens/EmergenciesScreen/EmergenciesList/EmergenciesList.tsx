@@ -5,6 +5,8 @@ import { styles } from './EmergenciesList.styles';
 import openMap from 'react-native-open-maps';
 import { ScrollView, Box, Text } from 'native-base';
 import { CircularButton } from '../../../components/CircularButton/CircularButton';
+import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
+import { colors } from '../../../utils/colors';
 
 interface EmergenciesListProps {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Emergencies'>;
@@ -13,15 +15,16 @@ interface EmergenciesListProps {
 interface EmergencyListItem {
   title: string;
   screen: string;
+  icon: string;
 }
 
-// TODO: use section list
 export const EmergenciesList = (props: EmergenciesListProps) => {
   const emergenciesList: EmergencyListItem[] = [
-    { title: 'COVID-19', screen: '' },
-    { title: 'Open wound', screen: '' },
-    { title: 'Nauseous', screen: '' },
+    { title: 'COVID-19', screen: '', icon: 'coronavirus' },
+    { title: 'Open wound', screen: '', icon: 'opacity' },
+    { title: 'Nauseous', screen: '', icon: 'sick' },
   ];
+  const buttonSize = 40;
 
   const handleNavigation = (screen: any, params: any) => {
     props.navigation.navigate(screen, params);
@@ -40,7 +43,13 @@ export const EmergenciesList = (props: EmergenciesListProps) => {
       onPress={() => handleNavigation('Emergencies', {})}
       key={item.title}
     >
-      {item.title}
+      <MaterialIcons
+        name={item.icon}
+        size={buttonSize}
+        color={colors.red}
+        style={styles.iconStyles}
+      />
+      <Text style={styles.buttonText}>{item.title}</Text>
     </CircularButton>
   ));
 
@@ -49,17 +58,33 @@ export const EmergenciesList = (props: EmergenciesListProps) => {
       style={styles.emergenciesList}
       showsVerticalScrollIndicator={false}
     >
-      <Text style={styles.buttonGroupText}>Get directions</Text>
+      <Text style={styles.buttonGroupText}>Get Directions</Text>
       <Box>
         <Box style={styles.buttonGroup}>
           <CircularButton onPress={() => open('Nearest Hospital')} dark={true}>
-            Hospital
+            <MaterialCommunityIcons
+              name='hospital-building'
+              size={buttonSize}
+              color={colors.white}
+              style={styles.iconStyles}
+            />
+            <Text style={{ ...styles.buttonText, color: colors.white }}>
+              Hospital
+            </Text>
           </CircularButton>
           <CircularButton
             onPress={() => open('Nearest Police Station')}
             dark={true}
           >
-            Police Station
+            <MaterialCommunityIcons
+              name='police-badge'
+              size={buttonSize}
+              color={colors.white}
+              style={styles.iconStyles}
+            />
+            <Text style={{ ...styles.buttonText, color: colors.white }}>
+              Police Station
+            </Text>
           </CircularButton>
         </Box>
 

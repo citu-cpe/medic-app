@@ -25,6 +25,7 @@ const Stack = createNativeStackNavigator();
 
 // TODO: add expo fonts
 // TODO: add emergency info screen
+// TODO: call emergency contacts
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
 
