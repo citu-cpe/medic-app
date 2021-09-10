@@ -1,27 +1,32 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { HomeScreen, HomeProps } from './screens/HomeScreen/HomeScreen';
+import { HomeScreen, HomeScreenProps } from './screens/HomeScreen/HomeScreen';
 import {
   EmergenciesScreen,
-  EmergenciesProps,
+  EmergenciesScreenProps,
 } from './screens/EmergenciesScreen/EmergenciesScreen';
 import {
   GoogleMaps,
-  GoogleMapsProps,
+  GoogleMapsScreenProps,
 } from './components/GoogleMaps/GoogleMaps';
 import { Box, NativeBaseProvider, StatusBar } from 'native-base';
 import { StaggerButtons } from './components/StaggerButtons/StaggerButtons';
 import * as SplashScreen from 'expo-splash-screen';
 import { Platform } from 'react-native';
+import {
+  FirstAidScreen,
+  FirstAidScreenProps,
+} from './screens/FirstAidScreen/FirstAidScreen';
 
 export type RootStackParamList = {
-  Home: HomeProps;
-  Emergencies: EmergenciesProps;
-  GoogleMaps: GoogleMapsProps;
+  Home: HomeScreenProps;
+  Emergencies: EmergenciesScreenProps;
+  GoogleMaps: GoogleMapsScreenProps;
+  FirstAid: FirstAidScreenProps;
 };
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 // TODO: add expo fonts
 // TODO: add emergency info screen
@@ -71,6 +76,7 @@ export default function App() {
               component={EmergenciesScreen}
             ></Stack.Screen>
             <Stack.Screen name='GoogleMaps' component={GoogleMaps} />
+            <Stack.Screen name='FirstAid' component={FirstAidScreen} />
           </Stack.Navigator>
         </NavigationContainer>
         <StaggerButtons />

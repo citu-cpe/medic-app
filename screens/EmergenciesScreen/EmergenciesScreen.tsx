@@ -5,7 +5,7 @@ import { RootStackParamList } from '../../App';
 import { EmergenciesList } from './EmergenciesList/EmergenciesList';
 import { styles } from './EmergenciesScreen.styles';
 
-export interface EmergenciesProps {}
+export interface EmergenciesScreenProps {}
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Emergencies'>;
 

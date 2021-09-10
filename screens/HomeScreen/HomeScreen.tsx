@@ -6,7 +6,7 @@ import { styles } from './HomeScreen.styles';
 import { Box } from 'native-base';
 import { CircularButton } from '../../components/CircularButton/CircularButton';
 
-export interface HomeProps {}
+export interface HomeScreenProps {}
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 

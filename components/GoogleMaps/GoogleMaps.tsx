@@ -6,9 +6,9 @@ import MapView from 'react-native-maps';
 import { RootStackParamList } from '../../App';
 import { styles } from './GoogleMaps.styles';
 
-export interface GoogleMapsProps {}
+export interface GoogleMapsScreenProps {}
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Emergencies'>;
+type Props = NativeStackScreenProps<RootStackParamList, 'GoogleMaps'>;
 
 export const GoogleMaps = ({ navigation }: Props) => {
   return (

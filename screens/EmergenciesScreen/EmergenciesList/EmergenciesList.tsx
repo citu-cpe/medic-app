@@ -7,28 +7,21 @@ import { ScrollView, Box, Text } from 'native-base';
 import { CircularButton } from '../../../components/CircularButton/CircularButton';
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { colors } from '../../../utils/colors';
+import { Step } from '../../FirstAidScreen/FirstAidScreen';
+import { emergenciesList } from '../../../data/emergencies';
 
 interface EmergenciesListProps {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Emergencies'>;
 }
 
-interface EmergencyListItem {
+export interface EmergencyListItem {
   title: string;
-  screen: string;
   icon: string;
+  steps: Step[];
 }
 
-export const EmergenciesList = (props: EmergenciesListProps) => {
-  const emergenciesList: EmergencyListItem[] = [
-    { title: 'COVID-19', screen: '', icon: 'coronavirus' },
-    { title: 'Open wound', screen: '', icon: 'opacity' },
-    { title: 'Nauseous', screen: '', icon: 'sick' },
-  ];
+export const EmergenciesList = ({ navigation }: EmergenciesListProps) => {
   const buttonSize = 40;
-
-  const handleNavigation = (screen: any, params: any) => {
-    props.navigation.navigate(screen, params);
-  };
 
   const open = (destination: string) => {
     openMap({
@@ -40,10 +33,16 @@ export const EmergenciesList = (props: EmergenciesListProps) => {
 
   const firstAidButtons = emergenciesList.map((item) => (
     <CircularButton
-      onPress={() => handleNavigation('Emergencies', {})}
+      onPress={() =>
+        navigation.navigate('FirstAid', {
+          title: item.title,
+          steps: item.steps,
+        })
+      }
       key={item.title}
     >
       <MaterialIcons
+        // @ts-ignore
         name={item.icon}
         size={buttonSize}
         color={colors.red}
