@@ -58,13 +58,13 @@ export const ContactsScreen = () => {
   };
 
   return (
-    <ScrollView
-      flex={1}
-      bgColor={colors.beige}
-      paddingTop={isIOS ? 10 : 5}
-      paddingX={5}
-    >
-      <Box flexDirection='row' justifyContent='space-between'>
+    <ScrollView flex={1} bgColor={colors.beige} paddingTop={isIOS ? 10 : 5}>
+      <Box
+        flexDirection='row'
+        justifyContent='space-between'
+        width='90%'
+        margin='auto'
+      >
         <Text fontWeight='bold' fontSize={25} color={colors.red}>
           Emergency Contacts
         </Text>
@@ -72,10 +72,12 @@ export const ContactsScreen = () => {
           <MaterialIcons name='add' size={30} color={colors.red} />
         </TouchableOpacity>
       </Box>
-      <EmergencyContacts
-        emergencyContacts={emergencyContacts}
-        updateEmergencyContactIds={updateEmergencyContactIds}
-      />
+      <Box width='90%' margin='auto'>
+        <EmergencyContacts
+          emergencyContacts={emergencyContacts}
+          updateEmergencyContactIds={updateEmergencyContactIds}
+        />
+      </Box>
       <ContactsModal
         ref={modalizeRef}
         contacts={contacts}

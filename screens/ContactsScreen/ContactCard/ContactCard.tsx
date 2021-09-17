@@ -63,6 +63,7 @@ export const ContactCard = ({
       p={3}
       bgColor={colors.white}
       borderRadius={10}
+      shadow={3}
     >
       <Box flexDirection='row'>
         <Image
