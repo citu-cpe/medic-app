@@ -1,9 +1,9 @@
 import React from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { Box, Text } from 'native-base';
-import { RootStackParamList } from '../../App';
+import { Box } from 'native-base';
 import { EmergenciesList } from './EmergenciesList/EmergenciesList';
 import { styles } from './EmergenciesScreen.styles';
+import { RootStackParamList } from '../screens';
 
 export interface EmergenciesScreenProps {}
 

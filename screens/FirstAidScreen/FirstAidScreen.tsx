@@ -2,7 +2,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { ScrollView, Text, Box, Image } from 'native-base';
 import React from 'react';
 import { StatusBar } from 'react-native';
-import { RootStackParamList } from '../../App';
+import { RootStackParamList } from '../screens';
 import { styles } from './FirstAidScreen.style';
 
 export interface FirstAidScreenProps {

@@ -1,6 +1,5 @@
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React from 'react';
-import { RootStackParamList } from '../../../App';
 import { styles } from './EmergenciesList.styles';
 import openMap from 'react-native-open-maps';
 import { ScrollView, Box, Text } from 'native-base';
@@ -9,6 +8,7 @@ import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { colors } from '../../../utils/colors';
 import { Step } from '../../FirstAidScreen/FirstAidScreen';
 import { emergenciesList } from '../../../data/emergencies';
+import { RootStackParamList } from '../../Screens';
 
 interface EmergenciesListProps {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Emergencies'>;

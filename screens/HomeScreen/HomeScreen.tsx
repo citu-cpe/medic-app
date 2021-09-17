@@ -1,10 +1,11 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Text } from 'react-native';
 import React from 'react';
-import { RootStackParamList } from '../../App';
 import { styles } from './HomeScreen.styles';
 import { Box } from 'native-base';
 import { CircularButton } from '../../components/CircularButton/CircularButton';
+import { RootStackParamList } from '../screens';
+import { StaggerButtons } from '../../components/StaggerButtons/StaggerButtons';
 
 export interface HomeScreenProps {}
 
@@ -20,5 +21,6 @@ export const HomeScreen = ({ navigation }: Props) => (
     >
       <Text style={styles.buttonText}>HELP!</Text>
     </CircularButton>
+    <StaggerButtons />
   </Box>
 );
