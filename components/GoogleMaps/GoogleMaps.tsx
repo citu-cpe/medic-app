@@ -3,8 +3,8 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { ArrowBackIcon, Box, StatusBar } from 'native-base';
 import { TouchableOpacity } from 'react-native';
 import MapView from 'react-native-maps';
-import { RootStackParamList } from '../../App';
 import { styles } from './GoogleMaps.styles';
+import { RootStackParamList } from '../../screens/screens';
 
 export interface GoogleMapsScreenProps {}
 
