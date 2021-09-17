@@ -3,6 +3,7 @@ import { Box, NativeBaseProvider, StatusBar } from 'native-base';
 import * as SplashScreen from 'expo-splash-screen';
 import { Platform } from 'react-native';
 import { Screens } from './screens/Screens';
+import { theme } from './utils/theme';
 
 // TODO: add expo fonts
 // TODO: call emergency contacts
@@ -35,7 +36,7 @@ export default function App() {
   }
 
   return (
-    <NativeBaseProvider>
+    <NativeBaseProvider theme={theme}>
       <Box style={{ flex: 1 }} onLayout={onLayoutRootView}>
         <StatusBar
           barStyle={Platform.OS === 'android' ? 'default' : 'dark-content'}
