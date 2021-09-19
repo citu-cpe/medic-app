@@ -27,9 +27,5 @@ export const getStyles = (
       shadowOpacity: 0.45,
       elevation: props.dark ? 7 : 5,
     },
-    text: {
-      color: props.dark ? colors.white : colors.red,
-      fontWeight: 'bold',
-    },
   });
 };

@@ -1,8 +1,10 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { ContactsScreen } from '../ContactsScreen/ContactsScreen';
+import { RootStackParamList } from '../Screens';
+import { TextScreen } from '../TextScreen/TextScreen';
 
-const ContactsStack = createNativeStackNavigator();
+const ContactsStack = createNativeStackNavigator<RootStackParamList>();
 
 export const ContactsStackScreen = () => (
   <ContactsStack.Navigator
@@ -10,5 +12,6 @@ export const ContactsStackScreen = () => (
     screenOptions={{ headerShown: false }}
   >
     <ContactsStack.Screen name='Contacts' component={ContactsScreen} />
+    <ContactsStack.Screen name='Text' component={TextScreen} />
   </ContactsStack.Navigator>
 );

@@ -22,7 +22,7 @@ export const EmergencyContacts = ({
   ));
 
   return (
-    <Box flex={1} my={5}>
+    <Box flex={1} mt={5} mb={50}>
       {emergencyContactItems}
     </Box>
   );

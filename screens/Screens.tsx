@@ -10,6 +10,8 @@ import { colors } from '../utils/colors';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ContactsStackScreen } from './routes/ContactsStackScreen';
 import { Host } from 'react-native-portalize';
+import { ContactsScreenProps } from './ContactsScreen/ContactsScreen';
+import { TextScreenProps } from './TextScreen/TextScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -18,6 +20,8 @@ export type RootStackParamList = {
   Emergencies: EmergenciesScreenProps;
   GoogleMaps: GoogleMapsScreenProps;
   FirstAid: FirstAidScreenProps;
+  Contacts: ContactsScreenProps;
+  Text: TextScreenProps;
 };
 
 export const Screens = () => (

@@ -1,19 +1,10 @@
 import { IStaggerStyleProps } from 'native-base/lib/typescript/components/composites/Transitions/Stagger';
-import { StyleSheet } from 'react-native';
 
 interface StaggerStyles {
   initial: IStaggerStyleProps;
   animate: IStaggerStyleProps;
   exit: IStaggerStyleProps;
 }
-
-export const styles = StyleSheet.create({
-  container: {
-    position: 'absolute',
-    bottom: 20,
-    left: 30,
-  },
-});
 
 export const staggerStyles: StaggerStyles = {
   initial: {

@@ -9,17 +9,26 @@ import * as Contacts from 'expo-contacts';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StorageKeys } from '../../data/storageKeys';
 import { EmergencyContacts } from './EmergencyContacts/EmergencyContacts';
+import { CircularButton } from '../../components/CircularButton/CircularButton';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../Screens';
+import * as SMS from 'expo-sms';
 
 const isIOS = Platform.OS === 'ios';
 
-export const ContactsScreen = () => {
+export interface ContactsScreenProps {}
+
+type Props = NativeStackScreenProps<RootStackParamList, 'Contacts'>;
+
+export const ContactsScreen = ({ navigation }: Props) => {
   const modalizeRef = useRef<Modalize>(null);
   const [contacts, setContacts] = useState<Contacts.Contact[]>([]);
   const [emergencyContacts, setEmergencyContacts] = useState<
     Contacts.Contact[]
   >([]);
   const [emergencyContactIds, setEmergencyContactIds] = useState<string[]>([]);
-  const [trigger, setTrigger] = useState<boolean>();
+  const [trigger, setTrigger] = useState(false);
+  const [smsAvailable, setSmsAvailable] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -30,6 +39,9 @@ export const ContactsScreen = () => {
 
         setContacts(data);
       }
+
+      const smsAvailable = await SMS.isAvailableAsync();
+      setSmsAvailable(smsAvailable);
     })();
   }, []);
 
@@ -58,25 +70,39 @@ export const ContactsScreen = () => {
   };
 
   return (
-    <ScrollView flex={1} bgColor={colors.beige} paddingTop={isIOS ? 10 : 5}>
-      <Box
-        flexDirection='row'
-        justifyContent='space-between'
-        width='90%'
-        margin='auto'
-      >
-        <Text fontWeight='bold' fontSize={25} color={colors.red}>
-          Emergency Contacts
-        </Text>
-        <TouchableOpacity onPress={() => modalizeRef.current?.open()}>
-          <MaterialIcons name='add' size={30} color={colors.red} />
-        </TouchableOpacity>
-      </Box>
-      <Box width='90%' margin='auto'>
-        <EmergencyContacts
-          emergencyContacts={emergencyContacts}
-          updateEmergencyContactIds={updateEmergencyContactIds}
-        />
+    <Box flex={1}>
+      <ScrollView flex={1} bgColor={colors.beige} paddingTop={isIOS ? 10 : 5}>
+        <Box
+          flexDirection='row'
+          justifyContent='space-between'
+          width='90%'
+          margin='auto'
+          flex={1}
+        >
+          <Text fontWeight='bold' fontSize={25} color={colors.red}>
+            Emergency Contacts
+          </Text>
+          <TouchableOpacity onPress={() => modalizeRef.current?.open()}>
+            <MaterialIcons name='add' size={30} color={colors.red} />
+          </TouchableOpacity>
+        </Box>
+        <Box width='90%' margin='auto' flex={1}>
+          <EmergencyContacts
+            emergencyContacts={emergencyContacts}
+            updateEmergencyContactIds={updateEmergencyContactIds}
+          />
+        </Box>
+      </ScrollView>
+      <Box position='absolute' bottom={5} right={10}>
+        <CircularButton
+          dark={true}
+          size={70}
+          onPress={() =>
+            navigation.navigate('Text', { emergencyContacts, smsAvailable })
+          }
+        >
+          <MaterialIcons name='textsms' size={30} color={colors.white} />
+        </CircularButton>
       </Box>
       <ContactsModal
         ref={modalizeRef}
@@ -84,6 +110,6 @@ export const ContactsScreen = () => {
         emergencyContactIds={emergencyContactIds}
         updateEmergencyContactIds={updateEmergencyContactIds}
       />
-    </ScrollView>
+    </Box>
   );
 };

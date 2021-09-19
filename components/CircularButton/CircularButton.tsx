@@ -1,4 +1,3 @@
-import { Text } from 'native-base';
 import React from 'react';
 import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
 import { getStyles } from './CircularButton.styles';
