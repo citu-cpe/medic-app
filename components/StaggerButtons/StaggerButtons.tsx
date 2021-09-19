@@ -1,7 +1,7 @@
 import { Box, IconButton, Stagger, useDisclose } from 'native-base';
 import React from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { styles, staggerStyles } from './StaggerButtons.style';
+import { staggerStyles } from './StaggerButtons.style';
 import call from 'react-native-phone-call';
 import { colors } from '../../utils/colors';
 
@@ -11,7 +11,7 @@ export const StaggerButtons = () => {
   const prompt = false;
 
   return (
-    <Box style={styles.container}>
+    <Box position='absolute' bottom={5} left={10}>
       <Stagger
         visible={isOpen}
         initial={staggerStyles.initial}
