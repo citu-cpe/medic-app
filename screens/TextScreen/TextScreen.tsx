@@ -23,6 +23,7 @@ const windowHeight = Dimensions.get('window').height;
 export interface TextScreenProps {
   emergencyContacts: Contact[];
   smsAvailable: boolean;
+  emergencyContactId?: string;
 }
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Text'>;
@@ -35,6 +36,7 @@ export const TextScreen = ({ route }: Props) => {
   const [location, setLocation] = useState<string>('');
   const [locationLoading, setLocationLoading] = useState(true);
   const [isSending, setIsSending] = useState(false);
+  const [name, setName] = useState<string | null>(null);
 
   const onKeyboardShow = (event: KeyboardEvent) =>
     setKeyboardOffset(event.endCoordinates.height - 49);
@@ -53,6 +55,13 @@ export const TextScreen = ({ route }: Props) => {
       'keyboardWillHide',
       onKeyboardHide
     );
+
+    if (route.params.emergencyContactId) {
+      const name = route.params.emergencyContacts.find(
+        (contact) => contact.id === route.params.emergencyContactId
+      )?.name;
+      setName(name || null);
+    }
 
     return () => {
       keyboardDidShowListener.current.remove();
@@ -109,7 +118,13 @@ Country: ${address.country || 'unknown'}`.trim()
   };
 
   const sendTextMessage = async (textMessage: string) => {
-    const emergencyContacts = route.params.emergencyContacts;
+    let emergencyContacts = route.params.emergencyContacts;
+
+    if (route.params.emergencyContactId) {
+      emergencyContacts = emergencyContacts.filter(
+        (contact) => contact.id === route.params.emergencyContactId
+      );
+    }
 
     const numbers = emergencyContacts
       .filter(
@@ -135,7 +150,7 @@ Country: ${address.country || 'unknown'}`.trim()
     >
       <Box flex={1} width='90%' margin='auto'>
         <Text fontSize={20} fontWeight='bold' color={colors.red}>
-          Send Text to All Emergency Contacts
+          Send Text to {name ? name : 'All Emergency Contacts'}
         </Text>
         <Text fontSize={18} fontWeight='bold' color={colors.green} my={3}>
           Choose from one of the templates:

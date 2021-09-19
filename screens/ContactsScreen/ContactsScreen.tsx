@@ -69,6 +69,14 @@ export const ContactsScreen = ({ navigation }: Props) => {
     setTrigger(!trigger);
   };
 
+  const navigateToEmergencyContactMessage = (emergencyContactId: string) => {
+    navigation.navigate('Text', {
+      emergencyContacts,
+      smsAvailable,
+      emergencyContactId,
+    });
+  };
+
   return (
     <Box flex={1}>
       <ScrollView flex={1} bgColor={colors.beige} paddingTop={isIOS ? 10 : 5}>
@@ -90,6 +98,7 @@ export const ContactsScreen = ({ navigation }: Props) => {
           <EmergencyContacts
             emergencyContacts={emergencyContacts}
             updateEmergencyContactIds={updateEmergencyContactIds}
+            onPress={(id: string) => navigateToEmergencyContactMessage(id)}
           />
         </Box>
       </ScrollView>
