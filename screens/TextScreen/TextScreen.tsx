@@ -31,7 +31,7 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Text'>;
 export const TextScreen = ({ route }: Props) => {
   const [textMessage, setTextMessage] = useState<string>('');
   const [keyboardOffset, setKeyboardOffset] = useState(0);
-  const [showInstruction, setShowInstruction] = useState(true);
+  const [isTyping, setIsTyping] = useState(true);
   const [scrollViewMaxHeight, setScrollViewMaxHeight] = useState(0);
   const [location, setLocation] = useState<string>('');
   const [locationLoading, setLocationLoading] = useState(true);
@@ -167,13 +167,15 @@ Country: ${address.country || 'unknown'}`.trim()
               mt={3}
             />
           ) : (
-            textMessageTemplates.map((template) => (
-              <TextMessageTemplate
-                textMessage={template}
-                key={template}
-                onPress={() => onTextMessageTemplateClick(template)}
-              />
-            ))
+            <Box width='90%' margin='auto'>
+              {textMessageTemplates.map((template) => (
+                <TextMessageTemplate
+                  textMessage={template}
+                  key={template}
+                  onPress={() => onTextMessageTemplateClick(template)}
+                />
+              ))}
+            </Box>
           )}
         </ScrollView>
       </Box>
@@ -183,17 +185,24 @@ Country: ${address.country || 'unknown'}`.trim()
         width='100%'
         onLayout={updateMaxHeight}
       >
-        {showInstruction && (
-          <Text
-            fontSize={18}
-            fontWeight='bold'
-            color={colors.green}
-            width='90%'
-            margin='auto'
-          >
+        <Box
+          flex={1}
+          flexDirection='row'
+          justifyContent='space-between'
+          width='90%'
+          margin='auto'
+          bgColor={colors.beige}
+          pt={!isTyping ? 3 : 0}
+        >
+          <Text fontSize={18} fontWeight='bold' color={colors.green}>
             Or write your own:
           </Text>
-        )}
+          <TouchableOpacity onPress={() => setTextMessage('')}>
+            <Text fontSize={18} fontWeight='bold' color={colors.red}>
+              Clear
+            </Text>
+          </TouchableOpacity>
+        </Box>
         <Box
           flexDirection='row'
           alignItems='center'
@@ -216,8 +225,8 @@ Country: ${address.country || 'unknown'}`.trim()
             maxHeight={100}
             onChangeText={(text) => setTextMessage(text)}
             value={textMessage}
-            onFocus={() => setShowInstruction(false)}
-            onBlur={() => setShowInstruction(true)}
+            onFocus={() => setIsTyping(false)}
+            onBlur={() => setIsTyping(true)}
             flex={1}
             isDisabled={!route.params.smsAvailable}
           />

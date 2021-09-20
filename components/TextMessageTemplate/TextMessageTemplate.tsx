@@ -1,8 +1,7 @@
 import React from 'react';
-import { Text } from 'native-base';
+import { Text, Box } from 'native-base';
 import { colors } from '../../utils/colors';
 import { TouchableOpacity } from 'react-native';
-import { styles } from './TextMessageTemplate.style';
 
 interface TextMessageTemplateProps {
   textMessage: string;
@@ -11,10 +10,19 @@ interface TextMessageTemplateProps {
 
 export const TextMessageTemplate = (props: TextMessageTemplateProps) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={props.onPress}>
-      <Text fontWeight='bold' fontSize={20} color={colors.white}>
-        {props.textMessage}
-      </Text>
-    </TouchableOpacity>
+    <Box
+      flex={1}
+      shadow={3}
+      bgColor={colors.white}
+      my={3}
+      p={3}
+      borderRadius={10}
+    >
+      <TouchableOpacity onPress={props.onPress}>
+        <Text fontWeight='bold' fontSize={20} color={colors.red}>
+          {props.textMessage}
+        </Text>
+      </TouchableOpacity>
+    </Box>
   );
 };
