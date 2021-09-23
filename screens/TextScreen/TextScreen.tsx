@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { colors } from '../../utils/colors';
 import { isIOS } from '../../utils/isIOS';
-import { getTextMessageTemplates } from '../../utils/textMessageTemplates';
+import { getTextMessageTemplates } from '../../data/textMessageTemplates';
 import { TextMessageTemplate } from '../../components/TextMessageTemplate/TextMessageTemplate';
 import { Contact } from 'expo-contacts';
 import * as Location from 'expo-location';
