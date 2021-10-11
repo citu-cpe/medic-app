@@ -31,7 +31,7 @@ export const emergenciesList: EmergencyListItem[] = [
           5.Don't remove the cloth if it becomes soaked through, but add more layers if needed. Removing the first layer will interfere with the clotting process and result in more blood loss.
           6.Once bleeding is stopped, apply a clean bandage.`,
         stepImageUrl:
-          'https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg',
+          'https://www.verywellhealth.com/thmb/_Qe5EmFvRXsD8ASz3ED9Rbic8PQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-525386797-5a6a1eccfa6bcc003690b97f.jpg',
       },
     ],
   },
@@ -60,7 +60,7 @@ export const emergenciesList: EmergencyListItem[] = [
           3.Place your other hand on top of it
           4.Give quick upward thrusts to dislodge the obstruction`,
         stepImageUrl:
-          'https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg',
+          'https://www.verywellhealth.com/thmb/eez_1vIVOEa9Qr3UxA4xJdHH7F4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-136811278-664fedac86fc431d84ab156fdfeda4e4.jpg',
       },
     ],
   },
@@ -91,12 +91,14 @@ export const emergenciesList: EmergencyListItem[] = [
           2.Start chest compressions immediately. Push down hard and fast in the center of the chest, allowing the chest to come back up naturally between compressions. Continue until someone with more training has arrived.
           3.If you're trained in CPR, use chest compressions and rescue breathing.
           4.Use an AED if one is available. It's important to not delay chest compressions, though, so have someone else find one while you do chest compressions.`,
+        stepImageUrl:
+          'https://www.verywellhealth.com/thmb/pB5c6N4dkpbdy2XJ4bIeiAz8i8c=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-505252032-56d1ec685f9b5879cc81553d.jpg',
       }
     ]
   },
   {
     title: 'Blisters',
-    icon: 'sports-mma',
+    icon: '',
     steps: [
       {
         stepName: 'Example Step',
@@ -120,13 +122,13 @@ export const emergenciesList: EmergencyListItem[] = [
 
           Change the bandage any time it gets wet. Take it off when you go to bed so the area can dry. `,
         stepImageUrl:
-          'https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg',
+          'https://www.verywellhealth.com/thmb/-umtZsKRfpvxVSwA2tH64DQAGX0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/cropped-hand-of-man-applying-adhesive-bandage-on-ankle-1187311628-5b58a1be0a874e0586204d6b85ea8c55.jpg',
       },
     ],
   },
   {
     title: 'Burns',
-    icon: 'sports-mma',
+    icon: 'hot',
     steps: [
       {
         stepName: 'Example Step',
@@ -147,7 +149,7 @@ export const emergenciesList: EmergencyListItem[] = [
   },
   {
     title: 'Broken Bone or Fracture',
-    icon: 'sports-mma',
+    icon: '',
     steps: [
       {
         stepName: 'Example Step',
@@ -161,13 +163,13 @@ export const emergenciesList: EmergencyListItem[] = [
           4.If it's an extremity, elevate it.
           5.Give anti-inflammatory drugs like Advil (ibuprofen) or Aleve (naproxen) for pain. `,
         stepImageUrl:
-          'https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg',
+          'https://www.verywellhealth.com/thmb/1k9j5CJh2YVHX_QjozDcmYrRB-c=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/woman-sitting-with-ice-pack-on-knee-146276242-577c320f3df78cb62c9009cf.jpg',
       },
     ],
   },
   {
-    title: '',
-    icon: 'Sprain',
+    title: 'Sprain',
+    icon: '',
     steps: [
       {
         stepName: 'Example Step',
@@ -182,13 +184,13 @@ export const emergenciesList: EmergencyListItem[] = [
           
           See your healthcare provider soon for further diagnosis and treatment. `,
         stepImageUrl:
-          'https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg',
+          'https://www.verywellhealth.com/thmb/tLEtE6eh1D4128g251s9Nis-iPc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-580815229-56b05b583df78cf772ce6891.jpg',
       },
     ],
   },
   {
     title: 'Nosebleeds',
-    icon: 'sports-mma',
+    icon: '',
     steps: [
       {
         stepName: 'Example Step',
@@ -201,13 +203,13 @@ export const emergenciesList: EmergencyListItem[] = [
           3.Check after five minutes to see if bleeding has stopped. If not, continue pinching and check after another 10 minutes.
           4.You can also apply a cold pack to the bridge of the nose while pinching. `,
         stepImageUrl:
-          'https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg',
+          'https://www.verywellhealth.com/thmb/0T895cqWoarQAlU7r2epeM31ea4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-565976469-570285db3df78c7d9e6d8feb.jpg',
       },
     ],
   },
   {
     title: 'Frostbite',
-    icon: 'sports-mma',
+    icon: 'snow',
     steps: [
       {
         stepName: 'Example Step',
@@ -228,13 +230,13 @@ export const emergenciesList: EmergencyListItem[] = [
           
           Get emergency treatment if the skin is hard and begins turning white. `,
         stepImageUrl:
-          'https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg',
+          'https://cdn.britannica.com/72/130172-050-1E10CDDC/hands.jpg',
       },
     ],
   },
   {
     title: 'Bee Stings',
-    icon: 'sports-mma',
+    icon: '',
     steps: [
       {
         stepName: 'Example Step',
@@ -248,7 +250,7 @@ export const emergenciesList: EmergencyListItem[] = [
           4.Use an antihistamine like Benadryl (diphenhydramine) to reduce swelling and itching. 
           5.Use Advil or Tylenol for pain. `,
         stepImageUrl:
-          'https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg',
+          'https://www.verywellhealth.com/thmb/bq-XUm1SoeuObKOm0JGRqT3gbyI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-184988794-570278d83df78c7d9e6c1244.jpg',
       },
     ],
   },
