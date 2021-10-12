@@ -192,7 +192,7 @@ export const emergenciesList: EmergencyListItem[] = [
           Source: https://www.verywellhealth.com/basic-first-aid-procedures-1298578
           `,
         stepImageUrl:
-          'https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg',
+          'https://www.verywellhealth.com/thmb/MgCYkZpRCTo0m50lTaaGxG2Gc3U=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/woman-washing-hands-in-washstand-882017214-5b57492cc9e77c003756d31c.jpg',
       },
     ],
   },
@@ -370,7 +370,7 @@ export const emergenciesList: EmergencyListItem[] = [
         https://www.maxkravmaga.com/video/defending-unarmed-attacks-introduction-a-word-from-eyal/
         `,
         stepImageUrl:
-          'https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg',
+          'https://www.tmmartialarts.com/wp-content/uploads/2020/04/5-essential-self-defense-techniques-everyone-should-know.jpg',
       },
     ],
   },
