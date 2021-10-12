@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     flexWrap: 'wrap',
-    marginBottom: 20,
+    marginBottom: 30,
   },
   buttonGroupText: {
     fontWeight: 'bold',

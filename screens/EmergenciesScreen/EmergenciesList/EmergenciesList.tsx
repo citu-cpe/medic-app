@@ -16,7 +16,8 @@ interface EmergenciesListProps {
 
 export interface EmergencyListItem {
   title: string;
-  icon: string;
+  // icon: string;
+  icon: React.ComponentProps<typeof MaterialIcons>['name'];
   steps: Step[];
 }
 

@@ -1,4 +1,5 @@
 import { EmergencyListItem } from '../screens/EmergenciesScreen/EmergenciesList/EmergenciesList';
+import dedent from 'dedent';
 
 export const emergenciesList: EmergencyListItem[] = [
   {
@@ -20,8 +21,7 @@ export const emergenciesList: EmergencyListItem[] = [
     steps: [
       {
         stepName: 'Example Step',
-        stepDescription:
-          `First Aid for Bleeding
+        stepDescription: dedent`First Aid for Bleeding
           If you're faced with bleeding:
           
           1.Rinse the wound with water if possible.
@@ -41,8 +41,7 @@ export const emergenciesList: EmergencyListItem[] = [
     steps: [
       {
         stepName: 'Example Step',
-        stepDescription:
-          `First Aid for Choking
+        stepDescription: dedent`First Aid for Choking
           To perform the Heimlich maneuver:
           
           1.Stand behind the person and lean them slightly forward
@@ -70,8 +69,7 @@ export const emergenciesList: EmergencyListItem[] = [
     steps: [
       {
         stepName: 'Example Step',
-        stepDescription:
-          `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+        stepDescription: dedent`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
         stepImageUrl:
           'https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg',
       },
@@ -79,12 +77,11 @@ export const emergenciesList: EmergencyListItem[] = [
   },
   {
     title: 'Cardiac Arrest',
-    icon: '',
+    icon: 'favorite',
     steps: [
       {
-        stepName: 'Example Step',
-        stepDescription:
-          `First Aid for Suspected Cardiac Arrest
+        stepName: 'First Aid for Suspected Cardiac Arrest',
+        stepDescription: dedent`
           When you suspect someone is in cardiac arrest:
           
           1.Get someone to call 911 or the medical alert system for your location.
@@ -93,17 +90,16 @@ export const emergenciesList: EmergencyListItem[] = [
           4.Use an AED if one is available. It's important to not delay chest compressions, though, so have someone else find one while you do chest compressions.`,
         stepImageUrl:
           'https://www.verywellhealth.com/thmb/pB5c6N4dkpbdy2XJ4bIeiAz8i8c=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-505252032-56d1ec685f9b5879cc81553d.jpg',
-      }
-    ]
+      },
+    ],
   },
   {
     title: 'Blisters',
-    icon: '',
+    icon: 'whatshot',
     steps: [
       {
-        stepName: 'Example Step',
-        stepDescription:
-          `First Aid for Blisters
+        stepName: 'First Aid for Blisters',
+        stepDescription: dedent`
           If the blister is large or painful—especially if the activity that caused it isn’t finished (such as if you are in the middle of a hike)—follow these steps to drain and dress a blister
           
           1.Wash your hands and sterilize a needle with alcohol.
@@ -128,12 +124,11 @@ export const emergenciesList: EmergencyListItem[] = [
   },
   {
     title: 'Burns',
-    icon: 'hot',
+    icon: 'whatshot',
     steps: [
       {
-        stepName: 'Example Step',
-        stepDescription:
-          `First Aid for Burns
+        stepName: 'First Aid for Burns',
+        stepDescription: dedent`
           Take these first aid steps:
 
           1.Flush the burned area with cool running water for several minutes. Do not use ice.
@@ -149,12 +144,11 @@ export const emergenciesList: EmergencyListItem[] = [
   },
   {
     title: 'Broken Bone or Fracture',
-    icon: '',
+    icon: 'healing',
     steps: [
       {
-        stepName: 'Example Step',
-        stepDescription:
-          `First Aid for Suspected Fracture
+        stepName: 'First Aid for Suspected Fracture',
+        stepDescription: dedent`
           Take these steps for a suspected fracture:
           
           1.Don't try to straighten it.
@@ -169,12 +163,11 @@ export const emergenciesList: EmergencyListItem[] = [
   },
   {
     title: 'Sprain',
-    icon: '',
+    icon: 'accessible',
     steps: [
       {
-        stepName: 'Example Step',
-        stepDescription:
-          `First Aid for Sprains
+        stepName: 'First Aid for Sprains',
+        stepDescription: dedent`
           For a suspected sprain:
           
           1.Immobilize the limb
@@ -190,12 +183,11 @@ export const emergenciesList: EmergencyListItem[] = [
   },
   {
     title: 'Nosebleeds',
-    icon: '',
+    icon: 'opacity',
     steps: [
       {
-        stepName: 'Example Step',
-        stepDescription:
-          `First Aid for Nosebleed
+        stepName: 'First Aid for Nosebleed',
+        stepDescription: dedent`
           The first aid for nosebleed includes:
           
           1.Lean slightly forward, not back.
@@ -209,12 +201,11 @@ export const emergenciesList: EmergencyListItem[] = [
   },
   {
     title: 'Frostbite',
-    icon: 'snow',
+    icon: 'ac-unit',
     steps: [
       {
-        stepName: 'Example Step',
-        stepDescription:
-          `First Aid for Frostbite
+        stepName: 'First Aid for Frostbite',
+        stepDescription: dedent`
           Treating frostbite is a delicate procedure of gradual warming. If at all possible, this should be done by professionals at a medical facility. If that's not possible, or while awaiting an ambulance, you can begin first aid:
           
           1.Get out of the cold.
@@ -236,12 +227,11 @@ export const emergenciesList: EmergencyListItem[] = [
   },
   {
     title: 'Bee Stings',
-    icon: '',
+    icon: 'emoji-nature',
     steps: [
       {
-        stepName: 'Example Step',
-        stepDescription:
-          `First Aid for Bee Stings
+        stepName: 'First Aid for Bee Stings',
+        stepDescription: dedent`
           Follow these steps for bee sting first aid:
           
           1.Get the stinger out any way you can to keep it from injecting more venom. The method doesn't matter—it's most important to do it quickly.

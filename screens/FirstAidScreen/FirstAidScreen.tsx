@@ -21,14 +21,14 @@ type Props = NativeStackScreenProps<RootStackParamList, 'FirstAid'>;
 export const FirstAidScreen = ({ route }: Props) => {
   const steps = route.params.steps.map((step, i) => (
     <Box style={styles.step} key={step.stepName + i}>
-      <Text style={styles.stepName}>{step.stepName}</Text>
-      <Text style={styles.stepDescription}>{step.stepDescription}</Text>
       <Image
         source={{ uri: step.stepImageUrl }}
         alt={step.stepName}
         size={'xl'}
         style={styles.stepImage}
       />
+      <Text style={styles.stepName}>{step.stepName}</Text>
+      <Text style={styles.stepDescription}>{step.stepDescription}</Text>
     </Box>
   ));
 
