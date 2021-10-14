@@ -50,7 +50,8 @@ export const EmergencyNumbersModal = React.forwardRef(
               .toLowerCase()
               .includes(searchInput.trim().toLowerCase());
           const numberMatches = emergencyNumber.number.includes(searchInput);
-          return nameMatches || numberMatches;
+          const areaMatches = emergencyNumber.area.includes(searchInput);
+          return nameMatches || numberMatches || areaMatches;
         }
       );
       setFilteredEmergencyNumbers(newEmergencyNumbers);
