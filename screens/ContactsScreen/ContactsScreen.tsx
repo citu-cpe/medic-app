@@ -29,6 +29,7 @@ export const ContactsScreen = ({ navigation }: Props) => {
   const [emergencyContactIds, setEmergencyContactIds] = useState<string[]>([]);
   const [trigger, setTrigger] = useState(false);
   const [smsAvailable, setSmsAvailable] = useState(false);
+  const [reloadContactsTrigger, setReloadContactsTrigger] = useState(true);
 
   useEffect(() => {
     (async () => {
@@ -43,7 +44,7 @@ export const ContactsScreen = ({ navigation }: Props) => {
       const smsAvailable = await SMS.isAvailableAsync();
       setSmsAvailable(smsAvailable);
     })();
-  }, []);
+  }, [reloadContactsTrigger]);
 
   useEffect(() => {
     (async () => {
@@ -64,6 +65,10 @@ export const ContactsScreen = ({ navigation }: Props) => {
 
     setEmergencyContacts(emergencyContacts);
   }, [contacts, emergencyContactIds]);
+
+  const reloadContacts = () => {
+    setReloadContactsTrigger(!reloadContactsTrigger);
+  };
 
   const updateEmergencyContactIds = () => {
     setTrigger(!trigger);
@@ -92,6 +97,30 @@ export const ContactsScreen = ({ navigation }: Props) => {
           </Text>
           <TouchableOpacity onPress={() => modalizeRef.current?.open()}>
             <MaterialIcons name='add' size={30} color={colors.red} />
+          </TouchableOpacity>
+        </Box>
+        <Box
+          bgColor={colors.red}
+          width='90%'
+          margin='auto'
+          flex={1}
+          borderRadius={10}
+          paddingY={2}
+          marginTop={5}
+        >
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate('AddContact', { onReturn: reloadContacts })
+            }
+          >
+            <Text
+              color={colors.white}
+              textAlign='center'
+              fontSize={20}
+              fontWeight='bold'
+            >
+              Add New Contact
+            </Text>
           </TouchableOpacity>
         </Box>
         <Box width='90%' margin='auto' flex={1}>

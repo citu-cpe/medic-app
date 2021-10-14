@@ -4,6 +4,11 @@ import * as SplashScreen from 'expo-splash-screen';
 import { Platform } from 'react-native';
 import { Screens } from './screens/Screens';
 import { theme } from './utils/theme';
+import { LogBox } from 'react-native';
+
+LogBox.ignoreLogs([
+  'Non-serializable values were found in the navigation state',
+]);
 
 // TODO: add expo fonts
 // TODO: call emergency contacts
