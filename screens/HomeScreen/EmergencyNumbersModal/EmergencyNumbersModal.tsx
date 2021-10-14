@@ -5,6 +5,7 @@ import { ModalizeProps, Modalize } from 'react-native-modalize';
 import { Portal } from 'react-native-portalize';
 import { colors } from '../../../utils/colors';
 import { EmergencyNumberCard } from './EmergencyNumberCard/EmergencyNumberCard';
+import uuid from 'uuid-random';
 
 export interface EmergencyNumber {
   name: string;
@@ -27,7 +28,7 @@ export const EmergencyNumbersModal = React.forwardRef(
     >([]);
 
     const renderItem = ({ item }: ListRenderItemInfo<EmergencyNumber>) => {
-      return <EmergencyNumberCard emergencyNumber={item} />;
+      return <EmergencyNumberCard key={uuid()} emergencyNumber={item} />;
     };
 
     const keyExtractor = (item: any) => item.id;

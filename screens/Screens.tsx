@@ -12,6 +12,7 @@ import { ContactsStackScreen } from './routes/ContactsStackScreen';
 import { Host } from 'react-native-portalize';
 import { ContactsScreenProps } from './ContactsScreen/ContactsScreen';
 import { TextScreenProps } from './TextScreen/TextScreen';
+import { AddContactScreenProps } from './AddContactScreen/AddContactScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,6 +23,7 @@ export type RootStackParamList = {
   FirstAid: FirstAidScreenProps;
   Contacts: ContactsScreenProps;
   Text: TextScreenProps;
+  AddContact: AddContactScreenProps;
 };
 
 export const Screens = () => (
