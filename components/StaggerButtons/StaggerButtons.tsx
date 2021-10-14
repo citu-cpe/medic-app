@@ -2,13 +2,18 @@ import { Box, IconButton, Stagger, useDisclose } from 'native-base';
 import React from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { staggerStyles } from './StaggerButtons.style';
-import call from 'react-native-phone-call';
 import { colors } from '../../utils/colors';
+import { IHandles } from 'react-native-modalize/lib/options';
 
-export const StaggerButtons = () => {
+interface StaggerButtonsProps {
+  hospitalModalizeRef: React.RefObject<IHandles>;
+  policeStationModalizeRef: React.RefObject<IHandles>;
+  fireStationModalizeRef: React.RefObject<IHandles>;
+}
+
+export const StaggerButtons = (props: StaggerButtonsProps) => {
   const { isOpen, onToggle } = useDisclose();
   const buttonSize = 48;
-  const prompt = false;
 
   return (
     <Box position='absolute' bottom={5} left={10}>
@@ -30,7 +35,7 @@ export const StaggerButtons = () => {
           colorScheme='red'
           variant='solid'
           mb={4}
-          onPress={() => call({ number: '166', prompt })}
+          onPress={() => props.policeStationModalizeRef.current?.open()}
         />
         <IconButton
           rounded='full'
@@ -44,7 +49,7 @@ export const StaggerButtons = () => {
           colorScheme='red'
           variant='solid'
           mb={4}
-          onPress={() => call({ number: '160', prompt })}
+          onPress={() => props.fireStationModalizeRef.current?.open()}
         />
         <IconButton
           rounded='full'
@@ -58,7 +63,7 @@ export const StaggerButtons = () => {
           colorScheme='red'
           variant='solid'
           mb={4}
-          onPress={() => call({ number: '161', prompt })}
+          onPress={() => props.hospitalModalizeRef.current?.open()}
         />
       </Stagger>
       <IconButton
