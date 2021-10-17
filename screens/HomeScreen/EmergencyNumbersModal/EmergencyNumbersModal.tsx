@@ -103,6 +103,7 @@ export const EmergencyNumbersModal = React.forwardRef(
             updateCellsBatchingPeriod: 100,
             windowSize: 7,
           }}
+          onClose={() => setFilteredEmergencyNumbers(props.emergencyNumbers)}
           {...props}
         />
       </Portal>
