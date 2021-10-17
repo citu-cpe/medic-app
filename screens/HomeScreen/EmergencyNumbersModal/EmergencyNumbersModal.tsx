@@ -10,7 +10,7 @@ import uuid from 'uuid-random';
 export interface EmergencyNumber {
   name: string;
   number: string;
-  area: string;
+  area?: string;
 }
 
 interface EmergencyNumbersModalProps {
@@ -51,7 +51,14 @@ export const EmergencyNumbersModal = React.forwardRef(
               .toLowerCase()
               .includes(searchInput.trim().toLowerCase());
           const numberMatches = emergencyNumber.number.includes(searchInput);
-          const areaMatches = emergencyNumber.area.includes(searchInput);
+          let areaMatches = false;
+
+          if (emergencyNumber.area) {
+            areaMatches = emergencyNumber.area
+              .toLowerCase()
+              .includes(searchInput.trim().toLowerCase());
+          }
+
           return nameMatches || numberMatches || areaMatches;
         }
       );

@@ -28,9 +28,11 @@ export const EmergencyNumberCard = (props: EmergencyNumberCardProps) => {
           <Text fontWeight='bold' color={colors.black}>
             {props.emergencyNumber.name}
           </Text>
-          <Text fontStyle='italic' color={colors.black} marginY={1}>
-            {props.emergencyNumber.area}
-          </Text>
+          {props.emergencyNumber.area && (
+            <Text fontStyle='italic' color={colors.black} marginY={1}>
+              {props.emergencyNumber.area}
+            </Text>
+          )}
           <Text>{props.emergencyNumber.number}</Text>
         </Box>
       </Box>
