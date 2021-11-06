@@ -29,7 +29,7 @@ export const HomeScreen = ({ navigation }: Props) => {
         dark={true}
         onPress={() => navigation.navigate('Emergencies', {})}
       >
-        <Text style={styles.buttonText}>HELP</Text>
+        <Text style={styles.buttonText}>HELP!</Text>
       </CircularButton>
       <StaggerButtons
         hospitalModalizeRef={hospitalModalizeRef}
